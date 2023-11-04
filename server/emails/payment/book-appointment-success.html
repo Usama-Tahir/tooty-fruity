@@ -1,0 +1,14 @@
+{% extends '../layouts/default.html' %} {% block content %}
+<p>Hello {{user.name}},</p>
+<br />
+<p>
+  You have successfully enrolled for the {% if transaction.targetType === 'webinar' && webinar %} group class {{ webinar.name }} {% endif %} {% if
+  transaction.targetType === 'course' && course %} course {{ course.name }} {% endif %} {% if transaction.targetType === 'subject' && topic %}
+  <b>{{topic.name}}</b> 1 on 1 {% endif %} class
+</p>
+<br />
+<p>
+  <strong>Your transaction code:</strong>: #{{transaction.code}} <br />
+  <strong>Amount</strong>: {{currencySymbol}}{{transaction.price}} <br />
+</p>
+{% endblock %}

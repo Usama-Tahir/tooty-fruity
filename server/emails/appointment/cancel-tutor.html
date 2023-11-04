@@ -1,0 +1,17 @@
+{% extends '../layouts/default.html' %} {% block content %}
+
+<p>Hello {{ tutor.name }},</p>
+
+<p>Your appointment {{ appointment.code }} has been canceled.</p>
+
+<p>
+  <strong>User: </strong> {{user.name}} <br />
+  <strong>Time: </strong> {{startTimeTutor}} - {{toTimeTutor}}
+  <br />
+  <strong>Canceled by: </strong> {{cancelBy.name}} <br />
+  <strong>Reason: </strong> {{appointment.cancelReason}}<br />
+  {% if appointment.targetType === 'webinar' && appointment.webinar %} <strong>Webinar name: </strong> {{appointment.webinar.name}} {% endif %} {% if
+  appointment.targetType === 'subject' && appointment.topic %} <strong>Topic name: </strong> {{appointment.topic.name}} {% endif %}
+</p>
+
+{% endblock %}

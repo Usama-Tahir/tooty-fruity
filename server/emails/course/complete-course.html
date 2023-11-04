@@ -1,0 +1,15 @@
+{% extends '../layouts/default.html' %} {% block content %}
+<p>Hello {{userName}},</p>
+<br />
+<p>
+  Congratulations. You have completed the course "{{myCourse.name}}" and receieved a certificate. Please check your profile to see or share the
+  certificate.
+</p>
+<br />
+<p><strong>Course: </strong>{{myCourse.name}}</p>
+<p><strong>Completed time: </strong>{{date|date('jS \o\f F H:i')}}</p>
+<br />
+<br />
+<p>--- Sincerely,</p>
+<p>The {{appName}} Team</p>
+{% endblock %}
